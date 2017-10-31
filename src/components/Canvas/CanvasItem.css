@@ -1,0 +1,26 @@
+.dnd-canvas__object {
+    border-radius: 0.25rem;
+    border: 1px solid #d8dde6;
+}
+
+.dnd-canvas__object.dnd-canvas__object--moving {
+  background-color: #ecebea;
+  border-color: #969492 !important;
+  border-style: dashed !important;
+}
+
+.dnd-canvas__object.dnd-canvas__object--resizing {
+  border-color: #1589ee;
+  box-shadow: 0 0 3px #0070D2;
+}
+
+.dnd-canvas__object-buttons {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.slds-button.dnd-canvas__object-button--resize {
+    position: absolute;
+    right: 0;
+}

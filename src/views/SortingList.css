@@ -1,0 +1,21 @@
+/* Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+   Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
+
+.slds-sortable-list__item {
+  border: solid #d8dde6;
+  border-width: 1px 1px 0;
+  display: block;
+}
+
+.slds-sortable-list__item:hover,
+.slds-sortable-list__item:focus {
+  background-color: #f4f6f9;
+}
+
+.slds-sortable-list__list-item:last-child .slds-sortable-list__item {
+  border-bottom-width: 1px;
+}
+
+.slds-sortable-list__item.slds-is-grabbed {
+  border-bottom-width: 1px;
+}

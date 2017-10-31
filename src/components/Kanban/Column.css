@@ -1,0 +1,25 @@
+.dnd-kanban__column .slds-has-dividers_around-space {
+  min-width: 14.5em;
+  max-width: 22.5em;
+
+  min-height: 30em;
+}
+
+.dnd-kanban .dnd-kanban__column:first-child {
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+.dnd-kanban .dnd-kanban__column:last-child {
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+.dnd-kanban__column--dragging-over {
+    box-shadow: 0 0 3px #0070D2;
+    border-radius: .25rem;
+}
+
+.dnd-kanban__column--dragging-over * {
+    pointer-events: none;
+}

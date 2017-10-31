@@ -1,0 +1,8 @@
+.slds-is-resizable:hover {
+  box-shadow: #d8dde6 -0.25rem 0 0 inset;
+  background-color: #f4f6f9;
+}
+
+.slds-is-resizable {
+    height: 2rem;
+}

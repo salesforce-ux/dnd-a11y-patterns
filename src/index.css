@@ -1,0 +1,16 @@
+/* Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+   Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
+
+@import url("../node_modules/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css");
+
+.slds-is-draggable {
+  cursor: grab;
+}
+
+.slds-is-draggable:active {
+  cursor: grabbing;
+}
+
+.slds-is-grabbed {
+ transform: scale(1.02) rotate(1deg);
+}

@@ -1,0 +1,64 @@
+.slds-card {
+    height: 150px;
+    width: 400px;
+}
+
+.dnd-canvas__container {
+    position: relative;
+    padding: 0 !important;
+
+    /* Grid pattern from: https://codepen.io/jasonadelia/pen/DnrAe/ */
+    background-color: transparent;
+    background-image:
+        linear-gradient(
+            0deg,
+            transparent 24%,
+            #e4e9f3 25%,
+            #e4e9f3 26%,
+            transparent 27%,
+            transparent 74%,
+            #e4e9f3 75%,
+            #e4e9f3 76%,
+            transparent 77%,
+            transparent),
+        linear-gradient(
+            90deg,
+            transparent 24%,
+            #e4e9f3 25%,
+            #e4e9f3 26%,
+            transparent 27%,
+            transparent 74%,
+            #e4e9f3 75%,
+            #e4e9f3 76%,
+            transparent 77%,
+            transparent);
+    background-size: 50px 50px;
+    background-position: 0 0;
+}
+
+.dnd-canvas__object {
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    background-color: white;
+
+    text-align: center;
+}
+
+.dnd-canvas__object.ui-draggable-dragging,
+.dnd-canvas__object.dnd-canvas__keyboard-dragging { 
+    background-color: #ecebea;
+    border-color: #969492 !important;
+    border-style: dashed !important;
+}
+
+.dnd-canvas__object.dnd-canvas__keyboard-resizing { 
+    border-color: #1589ee;
+    box-shadow: 0 0 3px #0070D2;
+}
+
+.slds-grid_vertical-align-end {
+    bottom: 0px;
+}

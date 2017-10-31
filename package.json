@@ -1,0 +1,26 @@
+{
+  "name": "dnd-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@salesforce-ux/design-system": "^2.4.1",
+    "classnames": "^2.2.5",
+    "gh-pages": "^1.0.0",
+    "react": "^15.6.1",
+    "react-dnd": "^2.1.4",
+    "react-dnd-html5-backend": "^2.1.2",
+    "react-dom": "^15.6.1",
+    "react-draggable": "^3.0.3",
+    "react-rnd": "^5.1.0",
+    "react-router": "^2.7.0",
+    "react-scripts": "1.0.13"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

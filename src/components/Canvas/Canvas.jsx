@@ -1,0 +1,91 @@
+// Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+// Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
+
+import React, {Component} from 'react';
+import AriaLiveRegion from '../AriaLiveRegion/AriaLiveRegion';
+import './Canvas.css';
+
+class Canvas extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {liveText: ''};
+    this.updateLiveText = this.updateLiveText.bind(this);
+  }
+
+  updateLiveText(text) {
+    this.setState({liveText: text});
+  }
+
+  renderCanvasItems() {
+    const canvasSize = this.props.gridSize * this.props.gridInterval;
+
+    return React.Children.map(this.props.children, (child, i) => {
+      return React.cloneElement(child, {
+        updateLiveText: this.updateLiveText,
+        gridInterval: this.props.gridInterval,
+        canvasSize: canvasSize,
+        moveAriaDescribedby: 'dnd-canvas__operation--move',
+        resizeAriaDescribedby: 'dnd-canvas__operation--resize'
+      });
+    });
+  }
+
+  render() {
+    var size = this.props.gridInterval * this.props.gridSize;
+    var backgroundSize = this.props.gridInterval*2+ 'px ' + this.props.gridInterval*2 + 'px';
+    var style = {
+      backgroundSize: backgroundSize,
+      backgroundPosition: '10px 10px', // TODO: remove hardcoding
+      width: size + 'px',
+      height: size + 'px',
+    };
+    
+    return (
+      <div>
+        <AriaLiveRegion
+          id="dnd-canvas__live"
+          hasVisibilityToggle={true}
+          isVisible={true}
+        >
+          {this.state.liveText}
+        </AriaLiveRegion>
+
+        <span id="dnd-canvas__operation--move" className="slds-assistive-text">
+          Press Spacebar to toggle grab
+        </span>
+
+        <span id="dnd-canvas__operation--resize" className="slds-assistive-text">
+          Press Spacebar to toggle resize
+        </span>
+
+        <div
+          className="slds-box dnd-canvas__container"
+          aria-label={`Canvas: ${this.props.gridSize} by ${this.props.gridSize}`}
+          style={style}
+        >
+          {this.renderCanvasItems()}
+        </div>
+      </div>
+    )
+  }
+}
+
+// Canvas.proptypes = {
+//   /* width/height of each grid cell */
+//   gridInterval: PropTypes.number,
+//   /* width/height of total grid */
+//   gridSize: PropTypes.number,
+//   /* minimum height of resizable box */
+//   minHeight: PropTypes.number,
+//   /* minimum width of resizable box */
+//   minWidth: PropTypes.number,
+// }
+
+Canvas.defaultProps = {
+  gridInterval: 20,
+  gridSize: 20,
+  minWidth: 1,
+  minHeight: 1
+}
+
+export default Canvas;

@@ -1,0 +1,3 @@
+.dnd-kanban *[draggable="true"] {
+    cursor: move;
+}
