@@ -2,6 +2,7 @@
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import AriaLiveRegion from '../AriaLiveRegion/AriaLiveRegion';
 import './Canvas.css';
 
@@ -70,16 +71,16 @@ class Canvas extends Component {
   }
 }
 
-// Canvas.proptypes = {
-//   /* width/height of each grid cell */
-//   gridInterval: PropTypes.number,
-//   /* width/height of total grid */
-//   gridSize: PropTypes.number,
-//   /* minimum height of resizable box */
-//   minHeight: PropTypes.number,
-//   /* minimum width of resizable box */
-//   minWidth: PropTypes.number,
-// }
+Canvas.proptypes = {
+  /** @type {number} width/height of each grid cell */
+  gridInterval: PropTypes.number,
+  /** @type {number} width/height of total grid */
+  gridSize: PropTypes.number,
+  /** @type {number} minimum height of resizable box */
+  minHeight: PropTypes.number,
+  /** @type {number} minimum width of resizable box */
+  minWidth: PropTypes.number,
+}
 
 Canvas.defaultProps = {
   gridInterval: 20,
