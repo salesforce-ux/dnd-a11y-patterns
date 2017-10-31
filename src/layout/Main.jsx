@@ -9,7 +9,12 @@ class MainLayout extends Component {
   render () {
     return (
       <div className="slds-grid slds-wrap">
-        <NavLayout currentPath={this.props.location.pathname} />
+        <div className="slds-nav-vertical slds-p-vertical_medium slds-p-right_x-large">
+          <h1 className="slds-nav-vertical__title slds-text-title_caps">
+              D&D Interaction Patterns
+          </h1>
+          <NavLayout currentPath={this.props.location.pathname} />
+        </div>
         <div>
           <main className="slds-container--medium slds-container--center">
               {React.cloneElement(this.props.children, {})}

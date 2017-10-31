@@ -27,10 +27,7 @@ class NavItem extends Component {
 class NavLayout extends Component {
   render () {
     return (
-        <nav className="slds-nav-vertical slds-p-vertical_medium slds-p-right_x-large">
-            <h2 className="slds-nav-vertical__title slds-text-title_caps">
-                D&D Interaction Patterns
-            </h2>
+        <nav>
             <ul>
                 <NavItem to="canvas" label="Interact with a canvas" currentPath={this.props.currentPath} />
                 <NavItem to="resize" label="Resize in one dimension" currentPath={this.props.currentPath} />
