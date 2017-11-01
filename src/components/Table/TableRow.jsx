@@ -4,6 +4,14 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+const proptypes = {
+  firstCellIsHeader: PropTypes.bool
+}
+
+const defaultProps = {
+  firstCellIsHeader: true
+}
+
 class TableRow extends Component {
   renderCells() {
     return React.Children.map(this.props.children, (child, i) => {
@@ -19,12 +27,7 @@ class TableRow extends Component {
   }
 }
 
-TableRow.proptypes = {
-  firstCellIsHeader: PropTypes.bool
-}
-
-TableRow.defaultProps = {
-  firstCellIsHeader: true
-}
+TableRow.propTypes = proptypes;
+TableRow.defaultProps = defaultProps;
 
 export default TableRow;

@@ -6,6 +6,23 @@ import PropTypes from 'prop-types';
 import Draggable from 'react-draggable';
 import './TableHeaderCell.css';
 
+const proptypes = {
+  label: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  resizable: PropTypes.bool,
+  minWidth: PropTypes.number,
+  maxWidth: PropTypes.number,
+  stepSize: PropTypes.number,
+  width: PropTypes.number
+}
+
+const defaultProps = {
+  minWidth: 60,
+  maxWidth: 600,
+  stepSize: 10,
+  width: 100
+}
+
 class TableHeaderCell extends Component {
   constructor(props) {
     super(props);
@@ -77,21 +94,7 @@ class TableHeaderCell extends Component {
   }
 }
 
-TableHeaderCell.proptypes = {
-  label: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  resizable: PropTypes.bool,
-  minWidth: PropTypes.number,
-  maxWidth: PropTypes.number,
-  stepSize: PropTypes.number,
-  width: PropTypes.number
-}
-
-TableHeaderCell.defaultProps = {
-  minWidth: 60,
-  maxWidth: 600,
-  stepSize: 10,
-  width: 100
-}
+TableHeaderCell.propTypes = proptypes;
+TableHeaderCell.defaultProps = defaultProps;
 
 export default TableHeaderCell;

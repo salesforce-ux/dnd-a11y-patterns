@@ -6,6 +6,18 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from './Icon';
 
+const proptypes = {
+  ariaDescribedby: PropTypes.string,
+  onClick: PropTypes.func,
+  onKeyDown: PropTypes.func,
+  assistiveText: PropTypes.string,
+  color: PropTypes.string,
+  className: PropTypes.string,
+  size: PropTypes.string,
+  sprite: PropTypes.string.isRequired,
+  symbol: PropTypes.string.isRequired,
+};
+
 class IconButton extends Component {
   render() {
     const buttonClass = classNames(
@@ -35,16 +47,6 @@ class IconButton extends Component {
   }
 }
 
-IconButton.propTypes = {
-  ariaDescribedby: PropTypes.string,
-  onClick: PropTypes.func,
-  onKeyDown: PropTypes.func,
-  assistiveText: PropTypes.string,
-  color: PropTypes.string,
-  className: PropTypes.string,
-  size: PropTypes.string,
-  sprite: PropTypes.string.isRequired,
-  symbol: PropTypes.string.isRequired,
-};
+IconButton.propTypes = proptypes;
 
 export default IconButton;

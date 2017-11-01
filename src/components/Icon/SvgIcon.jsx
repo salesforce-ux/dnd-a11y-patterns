@@ -5,6 +5,14 @@ import React, {Component} from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+const proptypes = {
+  color: PropTypes.string,
+  className: PropTypes.string,
+  size: PropTypes.string,
+  sprite: PropTypes.string.isRequired,
+  symbol: PropTypes.string.isRequired,
+};
+
 class SvgIcon extends Component {
 
   constructor(props) {
@@ -48,12 +56,6 @@ class SvgIcon extends Component {
   }
 }
 
-SvgIcon.propTypes = {
-  color: PropTypes.string,
-  className: PropTypes.string,
-  size: PropTypes.string,
-  sprite: PropTypes.string.isRequired,
-  symbol: PropTypes.string.isRequired,
-};
+SvgIcon.propTypes = proptypes;
 
 export default SvgIcon;

@@ -9,7 +9,6 @@ import Item from './Item';
 import { DragSource, DropTarget } from 'react-dnd';
 import flow from 'lodash/flow';
 
-
 const itemSource = {
   beginDrag(props) {
     return {
@@ -64,6 +63,22 @@ const itemTarget = {
     // to avoid expensive index searches.
     monitor.getItem().index = hoverIndex;
   }
+};
+
+const proptypes = {
+  ariaDescribedby: PropTypes.string,
+  cancelMove: PropTypes.func,
+  connectDragSource: PropTypes.func.isRequired,
+  connectDropTarget: PropTypes.func.isRequired,
+  description: PropTypes.string,
+  index: PropTypes.number.isRequired,
+  isDragging: PropTypes.bool.isRequired,
+  id: PropTypes.any.isRequired,
+  title: PropTypes.string.isRequired,
+  Initials: PropTypes.string,
+  moveItem: PropTypes.func.isRequired,
+  dropItem: PropTypes.func,
+  grabItem: PropTypes.func,
 };
 
 class SortableListItem extends Component {
@@ -173,21 +188,7 @@ class SortableListItem extends Component {
   }
 }
 
-SortableListItem.propTypes = {
-  ariaDescribedby: PropTypes.string,
-  cancelMove: PropTypes.func,
-  connectDragSource: PropTypes.func.isRequired,
-  connectDropTarget: PropTypes.func.isRequired,
-  description: PropTypes.string,
-  index: PropTypes.number.isRequired,
-  isDragging: PropTypes.bool.isRequired,
-  id: PropTypes.any.isRequired,
-  title: PropTypes.string.isRequired,
-  Initials: PropTypes.string,
-  moveItem: PropTypes.func.isRequired,
-  dropItem: PropTypes.func,
-  grabItem: PropTypes.func,
-}
+SortableListItem.propTypes = proptypes;
 
 export default flow([
   DropTarget(ItemTypes.ITEM, itemTarget, connect => ({

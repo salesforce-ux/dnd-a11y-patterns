@@ -14,6 +14,16 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from '../Icon/Icon';
 
+const proptypes =  {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  initials: PropTypes.string.isRequired,
+  ariaDescribedby: PropTypes.string,
+  isDragging: PropTypes.bool.isRequired,
+  isGrabbed: PropTypes.bool,
+  handleKeyDown: PropTypes.func.isRequired,
+};
+
 class Item extends Component {
   render () {
     const { title, description, initials, isDragging, isGrabbed, ariaDescribedby, handleKeyDown } = this.props;
@@ -47,14 +57,6 @@ class Item extends Component {
   }
 }
 
-Item.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string,
-  initials: PropTypes.string.isRequired,
-  ariaDescribedby: PropTypes.string,
-  isDragging: PropTypes.bool.isRequired,
-  isGrabbed: PropTypes.bool,
-  handleKeyDown: PropTypes.func.isRequired,
-}
+Item.propTypes = proptypes;
 
 export default Item;

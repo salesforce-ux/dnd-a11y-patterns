@@ -100,7 +100,6 @@ class Listbox extends Component {
   handleDragDropKeyDown(event) {
     var currentOption = parseInt(event.target.id, 10);
     var ariaLiveText, startIndex, grabbedOptionName;
-    console.log(currentOption);
     if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
       if (this.state.inDragdropMode) {
         event.preventDefault();
@@ -200,7 +199,6 @@ class Listbox extends Component {
     } else if (event.key === ' ' && event.ctrlKey) {
       event.preventDefault();
       var updatedSelected = this.updateArray(currentOption, this.state.selectedOptions);
-      console.log(updatedSelected);
       this.setState({ selectedOptions: updatedSelected });
     } else if (event.key === 'a' && event.ctrlKey) {
       this.handleSelectAll();

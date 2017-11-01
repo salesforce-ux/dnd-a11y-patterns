@@ -6,6 +6,24 @@ import PropTypes from 'prop-types';
 import AriaLiveRegion from '../AriaLiveRegion/AriaLiveRegion';
 import './Canvas.css';
 
+const proptypes = {
+  /** @type {number} width/height of each grid cell */
+  gridInterval: PropTypes.number,
+  /** @type {number} width/height of total grid */
+  gridSize: PropTypes.number,
+  /** @type {number} minimum height of resizable box */
+  minHeight: PropTypes.number,
+  /** @type {number} minimum width of resizable box */
+  minWidth: PropTypes.number,
+};
+
+const defaultProps = {
+  gridInterval: 20,
+  gridSize: 20,
+  minWidth: 1,
+  minHeight: 1
+};
+
 class Canvas extends Component {
   constructor(props) {
     super(props);
@@ -71,22 +89,7 @@ class Canvas extends Component {
   }
 }
 
-Canvas.proptypes = {
-  /** @type {number} width/height of each grid cell */
-  gridInterval: PropTypes.number,
-  /** @type {number} width/height of total grid */
-  gridSize: PropTypes.number,
-  /** @type {number} minimum height of resizable box */
-  minHeight: PropTypes.number,
-  /** @type {number} minimum width of resizable box */
-  minWidth: PropTypes.number,
-}
-
-Canvas.defaultProps = {
-  gridInterval: 20,
-  gridSize: 20,
-  minWidth: 1,
-  minHeight: 1
-}
+Canvas.propTypes = proptypes;
+Canvas.defaultProps = defaultProps;
 
 export default Canvas;

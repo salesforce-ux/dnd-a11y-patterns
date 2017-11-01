@@ -3,7 +3,12 @@
 
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import Column from './Column';
+
+const proptypes = {
+  listItems: PropTypes.array
+};
 
 class Kanban extends Component {
   constructor(props) {
@@ -67,5 +72,7 @@ class Kanban extends Component {
     );
   }
 }
+
+Kanban.propTypes = proptypes;
 
 export default Kanban;

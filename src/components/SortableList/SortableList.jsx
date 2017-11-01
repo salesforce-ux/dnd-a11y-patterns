@@ -8,6 +8,10 @@ import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import SortableListItem from './SortableListItem';
 
+const proptypes = {
+  listItems: PropTypes.array
+};
+
 class SortableList extends Component {
 
   constructor (props) {
@@ -37,7 +41,6 @@ class SortableList extends Component {
 
   moveItem(dragIndex, hoverIndex) {
     if(hoverIndex < 0 || hoverIndex > this.state.listItems.length) {
-      console.log('too high too low:', hoverIndex);
       return;
     }
 
@@ -116,8 +119,6 @@ class SortableList extends Component {
   }
 }
 
-SortableList.propTypes = {
-  listItems: PropTypes.array,
-}
+SortableList.propTypes = proptypes;
 
 export default DragDropContext(HTML5Backend)(SortableList);

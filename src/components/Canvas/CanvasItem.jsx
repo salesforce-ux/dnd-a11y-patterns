@@ -8,6 +8,20 @@ import Rnd from 'react-rnd';
 import IconButton from '../Icon/IconButton';
 import './CanvasItem.css';
 
+const proptypes = {
+    label: PropTypes.string.isRequired,
+    x: PropTypes.number,
+    y: PropTypes.number,
+    width: PropTypes.number,
+    height: PropTypes.number,
+    minWidth: PropTypes.number,
+    minHeight: PropTypes.number,
+    canvasSize: PropTypes.number,
+    canvasHeight: PropTypes.number,
+    moveAriaDescribedby: PropTypes.string,
+    resizeAriaDescribedby: PropTypes.string
+};
+
 class CanvasItem extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +52,6 @@ class CanvasItem extends Component {
       width: this.defaultPosition.width,
       height: this.defaultPosition.height
     }
-    console.log(this.state);
 
     // Only allow drag-resize from bottomRight
     this.resizeHandles = {
@@ -327,24 +340,13 @@ class CanvasItem extends Component {
               onClick={this.handleResizeClick}
               onKeyDown={this.handleResizeKeyDown} />
           </div>
+
         </div>
       </Rnd>
     );
   }
 }
 
-CanvasItem.proptypes = {
-    label: PropTypes.string.isRequired,
-    x: PropTypes.number,
-    y: PropTypes.number,
-    width: PropTypes.number,
-    height: PropTypes.number,
-    minWidth: PropTypes.number,
-    minHeight: PropTypes.number,
-    canvasSize: PropTypes.number,
-    canvasHeight: PropTypes.number,
-    moveAriaDescribedby: PropTypes.string,
-    resizeAriaDescribedby: PropTypes.string
-};
+CanvasItem.propTypes = proptypes;
 
 export default CanvasItem;

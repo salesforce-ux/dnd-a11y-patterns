@@ -7,6 +7,13 @@ import PropTypes from 'prop-types';
 
 import './AriaLiveRegion.css';
 
+const proptypes = {
+  id: PropTypes.string.isRequired,
+  hasVisibilityToggle: PropTypes.bool,
+  isVisible: PropTypes.bool,
+  text: PropTypes.string
+};
+
 class AriaLiveRegion extends Component {
   constructor(props) {
     super(props);
@@ -67,11 +74,6 @@ class AriaLiveRegion extends Component {
   }
 }
 
-AriaLiveRegion.propTypes = {
-  id: PropTypes.string.isRequired,
-  hasVisibilityToggle: PropTypes.bool,
-  isVisible: PropTypes.bool,
-  text: PropTypes.string
-};
+AriaLiveRegion.propTypes = proptypes;
 
 export default AriaLiveRegion;
