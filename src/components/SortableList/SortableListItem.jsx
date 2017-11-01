@@ -8,6 +8,7 @@ import ItemTypes from './ItemTypes';
 import Item from './Item';
 import { DragSource, DropTarget } from 'react-dnd';
 import flow from 'lodash/flow';
+import './SortableListItem.css';
 
 const itemSource = {
   beginDrag(props) {

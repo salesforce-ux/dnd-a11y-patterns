@@ -4,7 +4,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import SortableList from '../components/SortableList/SortableList';
-import './SortingList.css';
 
 class SortingListView extends Component {
   constructor (props) {

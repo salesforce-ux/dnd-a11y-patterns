@@ -35,7 +35,7 @@ class Item extends Component {
     return(
       <a
         aria-describedby={ariaDescribedby}
-        href="#"
+        href="javascript:void(0)"
         onKeyDown={handleKeyDown}
         className={itemClasses}
       >
