@@ -2,6 +2,7 @@
   "name": "dnd-a11y-patterns",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://salesforce-ux.github.io/dnd-a11y-patterns",
   "dependencies": {
     "@salesforce-ux/design-system": "^2.4.1",
     "classnames": "^2.2.5",
