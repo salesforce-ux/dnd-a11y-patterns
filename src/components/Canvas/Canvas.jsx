@@ -3,7 +3,7 @@
 
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import AriaLiveRegion from '../AriaLiveRegion/AriaLiveRegion';
+import FancyAriaLiveRegion from '../AriaLiveRegion/FancyAriaLiveRegion';
 import './Canvas.css';
 
 const proptypes = {
@@ -61,13 +61,13 @@ class Canvas extends Component {
     
     return (
       <div>
-        <AriaLiveRegion
+        <FancyAriaLiveRegion
           id="dnd-canvas__live"
           hasVisibilityToggle={true}
           isVisible={true}
         >
           {this.state.liveText}
-        </AriaLiveRegion>
+        </FancyAriaLiveRegion>
 
         <span id="dnd-canvas__operation--move" className="slds-assistive-text">
           Press Spacebar to toggle grab
