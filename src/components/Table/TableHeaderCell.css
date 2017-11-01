@@ -1,3 +1,6 @@
+/* Copyright (c) 2015-present, salesforce.com, inc. All rights reserved
+   Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
+
 .slds-is-resizable:hover {
   box-shadow: #d8dde6 -0.25rem 0 0 inset;
   background-color: #f4f6f9;
