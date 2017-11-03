@@ -51,7 +51,7 @@ class SortingListView extends Component {
     return (
       <div>
         <h2 className="slds-text-heading_medium slds-p-vertical_medium">
-          Sorting a listbox
+          Sorting a list
         </h2>
       </div>
     )
