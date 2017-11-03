@@ -8,11 +8,11 @@ import ListboxOption from '../components/Listbox/ListboxOption';
 class SortingListboxView extends Component {
   renderDocumentation() {
     return (
-      <div>
+      <div className="slds-p-bottom_medium">
         <h2 className="slds-text-heading_medium slds-p-vertical_medium">
-          Sorting a listbox
+          Sort a listbox
         </h2>
-        <ul className="slds-list_dotted slds-p-bottom_medium">
+        <ul className="slds-list_dotted slds-p-bottom_small">
           <li>
             Use arrow keys to select an option
           </li>
@@ -26,6 +26,7 @@ class SortingListboxView extends Component {
             Press Space to drop option in new position
           </li>
         </ul>
+        <p>See also the <a href="https://lightningdesignsystem.com/accessibility/patterns/listbox">Lightning Design System's Accessibility Patterns</a> documentation for listboxes.</p>
       </div>
     )
   }
