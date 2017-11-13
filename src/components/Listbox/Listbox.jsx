@@ -232,14 +232,16 @@ class Listbox extends Component {
       let newOption = this.findNewOption(currentOption, true);
       this.setState({
         focusedOption: newOption,
-        selectedOptions: [newOption]
+        selectedOptions: [newOption],
+        ariaLiveText: null
       });
     } else if (event.key === 'ArrowUp' || (event.key === 'ArrowLeft' && this.props.isHorizontal)) {
       event.preventDefault();
       let newOption = this.findNewOption(currentOption, false);
       this.setState({
         focusedOption: newOption,
-        selectedOptions: [newOption]
+        selectedOptions: [newOption],
+        ariaLiveText: null
       });
     }
   }
