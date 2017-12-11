@@ -128,11 +128,13 @@ class SortableListItem extends Component {
         break;
 
       case 'ArrowDown':
+      case 'ArrowRight':
         e.preventDefault();
         this.moveItemDown();
         break;
 
       case 'ArrowUp':
+      case 'ArrowLeft':
         e.preventDefault();
         this.moveItemUp();
         break;

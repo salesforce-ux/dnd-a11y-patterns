@@ -49,10 +49,24 @@ class SortingListView extends Component {
 
   renderDocumentation() {
     return (
-      <div>
+      <div className="slds-p-bottom_medium">
         <h2 className="slds-text-heading_medium slds-p-vertical_medium">
           Sort a list
         </h2>
+        <ul className="slds-list_dotted slds-p-bottom_small">
+          <li>
+            Use Tab/Shift+Tab to navigate to an item
+          </li>
+          <li>
+            Press Space to enter into drag mode
+          </li>
+          <li>
+            Use Down/Right, Up/Left arrow keys to select a new position
+          </li>
+          <li>
+            Press Space to drop item in new position
+          </li>
+        </ul>
       </div>
     )
   }
