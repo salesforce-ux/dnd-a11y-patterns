@@ -1,6 +1,6 @@
 {
   "name": "dnd-a11y-patterns",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "homepage": "https://salesforce-ux.github.io/dnd-a11y-patterns",
   "dependencies": {
