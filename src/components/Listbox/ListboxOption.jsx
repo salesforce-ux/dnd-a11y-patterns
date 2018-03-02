@@ -4,6 +4,7 @@
 import React, { PureComponent } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import './Listbox.css';
 
 const proptypes = {
   /** @type {string} is the name for the sizing class for horizontal list options*/
@@ -22,6 +23,8 @@ const proptypes = {
   name: PropTypes.string,
   /** @type {function} the function triggered when onClick fires*/
   onClick: PropTypes.func,
+  /** @type {function} the function triggered when onDragStart fires*/
+  onDragStart: PropTypes.func,
   /** @type {function} the function triggered when onDrag fires*/
   onDrag: PropTypes.func,
   /** @type {function} the function triggered when onDragOver fires*/
@@ -54,6 +57,7 @@ class ListboxOption extends PureComponent {
         draggable={this.props.isDraggable ? true : false}
         id={this.props.id}
         onClick={this.props.onClick}
+        onDragStart={this.props.onDragStart ? this.props.onDragStart : null}
         onDrag={this.props.isDraggable ? this.props.onDrag : null}
         onDragOver={this.props.isDraggable ? this.props.onDragOver : null}
         onDrop={this.props.isDraggable ? this.props.onDrop : null}
@@ -62,9 +66,9 @@ class ListboxOption extends PureComponent {
         tabIndex={this.props.isFocused ? 0 : -1}
       >
         {this.props.isDraggable ? 
-          <span aria-hidden={true} className="slds-text-heading_medium slds-p-right_xx-small">⋮</span> : null
+          <span aria-hidden={true} className="listbox-option__icon slds-text-heading_medium slds-p-right_xx-small">⋮</span> : null
         }
-        {this.props.name}
+        <span className="listbox-option__text">{this.props.name}</span>
       </li>
     );
   }

@@ -28,11 +28,12 @@ class Listbox extends Component {
     this.state = {
       ariaLiveText: '',
       focusedOption: 0,
-      inDragdropMode: false,
+      inDragDropMode: false,
       listOptions: null,
       selectedOptions: [0]
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleDragStart = this.handleDragStart.bind(this);
     this.handleDrag = this.handleDrag.bind(this);
     this.handleDragOver = this.handleDragOver.bind(this);
     this.handleDrop = this.handleDrop.bind(this);
@@ -84,6 +85,10 @@ class Listbox extends Component {
     });
   }
 
+  handleDragStart(event) {
+    event.dataTransfer.dropEffect = "move";
+  }
+
   handleDrag(event) {
     event.preventDefault();
     var index = parseInt(event.target.id, 10);
@@ -101,7 +106,7 @@ class Listbox extends Component {
     var currentOption = parseInt(event.target.id, 10);
     var ariaLiveText, startIndex, grabbedOptionName;
     if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
-      if (this.state.inDragdropMode) {
+      if (this.state.inDragDropMode) {
         event.preventDefault();
         let moveNext;
         if (event.key === 'ArrowDown') { moveNext = true; } 
@@ -118,16 +123,16 @@ class Listbox extends Component {
     } else if (event.key === ' ') {
       event.preventDefault();
       grabbedOptionName = this.state.listOptions[currentOption].props.name;
-      if (this.state.inDragdropMode) {
+      if (this.state.inDragDropMode) {
         startIndex = this.state.selectedOptions[0];
         var endIndex = this.state.focusedOption;
         this.handleDragStateChange(startIndex, endIndex);
         grabbedOptionName = this.state.listOptions[startIndex].props.name;
       }
-      ariaLiveText = this.updateAssistiveText(grabbedOptionName, this.state.focusedOption, this.state.inDragdropMode, false);
+      ariaLiveText = this.updateAssistiveText(grabbedOptionName, this.state.focusedOption, this.state.inDragDropMode, false);
       this.setState( prevState => ({
         ariaLiveText,
-        inDragdropMode: !prevState.inDragdropMode
+        inDragDropMode: !prevState.inDragDropMode
       }));
     }
   }
@@ -260,6 +265,7 @@ class Listbox extends Component {
         isHorizontal: this.props.isHorizontal,
         isSelected: (this.state.selectedOptions.indexOf(i) > -1 ? true : false),
         onClick: this.handleClick,
+        onDragStart: this.handleDragStart,
         onDrag: this.handleDrag,
         onDragOver: this.handleDragOver,
         onDrop: this.handleDrop
@@ -313,7 +319,7 @@ class Listbox extends Component {
         }
       </div>;
 
-    return(
+    return (
       <div>
         {this.props.hasDragDrop || this.props.hasMulti ? 
           <AssistiveText /> : null
@@ -323,7 +329,9 @@ class Listbox extends Component {
           aria-multiselectable={this.props.hasMulti ? true : null}
           className={classnames("slds-border_top", "slds-border_right", "slds-border_bottom", "slds-border_left",
             {
-              "slds-list_horizontal": this.props.isHorizontal
+              "slds-list_horizontal": this.props.isHorizontal,
+              "dnd-listbox": this.props.hasDragDrop,
+              "dnd-listbox--dragging": this.state.inDragDropMode
             }
           )}
           onKeyDown={this.handleKeyDown}

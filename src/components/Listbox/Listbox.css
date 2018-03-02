@@ -1,0 +1,21 @@
+.dnd-listbox[role="listbox"] {
+  width: 200px;
+}
+
+.dnd-listbox *[role="option"][draggable="true"] {
+  cursor: grab;
+}
+
+.dnd-listbox *[role="option"]:hover, *[role="option"]:focus {
+  background: #f3f2f2;
+}
+
+.dnd-listbox *[role="option"]:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #1589ee;
+}
+
+.dnd-listbox.dnd-listbox--dragging *[role="option"][aria-selected="true"] .listbox-option__text {
+  font-style: italic;
+  font-weight: 700;
+}

@@ -18,12 +18,12 @@
 }
 
 .dnd-canvas__object-buttons {
-    bottom: 0;
-    position: absolute;
-    width: 100%;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
 }
 
 .slds-button.dnd-canvas__object-button--resize {
-    position: absolute;
-    right: 0;
+  position: absolute;
+  right: 0;
 }
