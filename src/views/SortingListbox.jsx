@@ -33,7 +33,7 @@ class SortingListboxView extends Component {
 
   renderExample() {
     return (
-      <Listbox ariaLabel="Desserts. Use arrow keys to move through list, space key to toggle drag/drop mode." hasDragDrop>
+      <Listbox ariaLabel="Desserts" hasMulti hasDragDrop>
         <ListboxOption name="Ice Cream"/>
         <ListboxOption name="Pie"/>
         <ListboxOption name="Cake"/>

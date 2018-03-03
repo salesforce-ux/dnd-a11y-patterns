@@ -263,6 +263,7 @@ class Listbox extends Component {
         isDraggable: this.props.hasDragDrop,
         isFocused: (this.state.focusedOption === i ? true : false),
         isHorizontal: this.props.isHorizontal,
+        isMultiSelectable: this.props.hasMulti,
         isSelected: (this.state.selectedOptions.indexOf(i) > -1 ? true : false),
         onClick: this.handleClick,
         onDragStart: this.handleDragStart,
@@ -327,6 +328,7 @@ class Listbox extends Component {
         <ul
           aria-label={this.props.ariaLabel}
           aria-multiselectable={this.props.hasMulti ? true : null}
+          aria-describedby="instructions"
           className={classnames("slds-border_top", "slds-border_right", "slds-border_bottom", "slds-border_left",
             {
               "slds-list_horizontal": this.props.isHorizontal,

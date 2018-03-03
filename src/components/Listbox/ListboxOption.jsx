@@ -17,6 +17,8 @@ const proptypes = {
   isFocused: PropTypes.bool,
   /** @type {bool} specifies if option is in a horizontal listbox*/
   isHorizontal: PropTypes.bool,
+  /** @type {bool} specifies if option is in multiselectable listbox*/
+  isMultiSelectable: PropTypes.bool,
   /** @type {bool} specifies if option is selected*/
   isSelected: PropTypes.bool,
   /** @type {string} is the name of the list element*/
@@ -47,7 +49,7 @@ class ListboxOption extends PureComponent {
   render() {
     return(
       <li
-        aria-selected={this.props.isSelected}
+        aria-selected={this.props.isMultiSelectable ? this.props.isSelected : this.props.isSelected ? true : null}
         className={classnames("slds-p-around_xx-small", this.props.horizontalClass,
           {
             "slds-text-align_center": !this.props.isDraggable,
