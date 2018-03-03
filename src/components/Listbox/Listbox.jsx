@@ -309,7 +309,7 @@ class Listbox extends Component {
     let AssistiveText = () =>
       <div>
         {this.props.hasDragDrop ? 
-          <div id="instructions" className="slds-assistive-text">
+          <div id="instructions" className="slds-p-vertical_small">
                 Press space bar to toggle drag drop mode, use arrow keys to move selected elements.
           </div> : null
         }

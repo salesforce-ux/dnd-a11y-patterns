@@ -34,7 +34,7 @@ class SortingListboxView extends Component {
   renderExample() {
     return (
       <div>
-        <h3 className="slds-text-heading_small slds-p-vertical_medium">Desserts</h3>
+        <h3 className="slds-text-heading_small slds-p-top_medium">Desserts</h3>
         <Listbox ariaLabel="Desserts" hasDragDrop>
           <ListboxOption name="Ice Cream"/>
           <ListboxOption name="Pie"/>
