@@ -33,14 +33,17 @@ class SortingListboxView extends Component {
 
   renderExample() {
     return (
-      <Listbox ariaLabel="Desserts" hasMulti hasDragDrop>
-        <ListboxOption name="Ice Cream"/>
-        <ListboxOption name="Pie"/>
-        <ListboxOption name="Cake"/>
-        <ListboxOption name="Cupcake"/>
-        <ListboxOption name="Donut"/>
-        <ListboxOption name="Sorbet"/>
-      </Listbox>
+      <div>
+        <h3 className="slds-text-heading_small slds-p-vertical_medium">Desserts</h3>
+        <Listbox ariaLabel="Desserts" hasDragDrop>
+          <ListboxOption name="Ice Cream"/>
+          <ListboxOption name="Pie"/>
+          <ListboxOption name="Cake"/>
+          <ListboxOption name="Cupcake"/>
+          <ListboxOption name="Donut"/>
+          <ListboxOption name="Sorbet"/>
+        </Listbox>
+      </div>
     );
   }
 
