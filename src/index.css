@@ -3,8 +3,8 @@
 
 @import url("../node_modules/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css");
 
-body {
-  background: #fff;
+html {
+  background: #fdfdfd;
 }
 
 .slds-is-draggable {
