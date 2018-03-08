@@ -114,14 +114,6 @@ class Listbox extends Component {
         startIndex = this.state.selectedOptions[0];
         var newOption = this.findNewOption(currentOption, moveNext);
         this.handleDragStateChange(startIndex, newOption);
-
-        /* 
-         Note(CMT): Removing this announcement for now as I suspect AT does this work for us.
-
-         grabbedOptionName = this.state.listOptions[startIndex].props.name;
-         ariaLiveText = this.updateAssistiveText(grabbedOptionName, newOption, false, true);
-         this.setState({ariaLiveText});
-        */
       } else {
         this.handleSingleSelectKeyDown(event);
       }
