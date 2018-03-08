@@ -44,7 +44,6 @@ class TableHeaderCell extends Component {
 
   renderResizer() {
     if (this.props.resizable) {
-      var id = "cell-resize-handle-" + this.props.id;
       return ((
         <div className="slds-resizable">
           <input
