@@ -168,7 +168,7 @@ class SortableListItem extends Component {
     });
   }
 
-  render () {
+  render() {
     const { title, description, initials, isDragging, connectDragSource, connectDropTarget } = this.props;
     const { ariaDescribedby } = this.state;
     const styles = {

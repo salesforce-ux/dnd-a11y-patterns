@@ -16,5 +16,13 @@ html {
 }
 
 .slds-is-grabbed {
- transform: scale(1.02) rotate(1deg);
+  transform: scale(1.02) rotate(1deg);
+}
+
+.demo-page__example-container {
+  margin: 10rem;
+}
+
+.demo-page__select-container {
+  width: 12rem;
 }

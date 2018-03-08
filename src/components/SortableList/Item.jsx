@@ -25,7 +25,7 @@ const proptypes =  {
 };
 
 class Item extends Component {
-  render () {
+  render() {
     const { title, description, initials, isDragging, isGrabbed, ariaDescribedby, handleKeyDown } = this.props;
     const itemClasses = classNames(
       'slds-app-launcher__tile slds-text-link--reset slds-is-draggable',

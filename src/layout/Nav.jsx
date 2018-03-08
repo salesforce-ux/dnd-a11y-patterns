@@ -25,7 +25,7 @@ class NavItem extends Component {
 }
 
 class NavLayout extends Component {
-  render () {
+  render() {
     return (
         <nav>
             <ul>

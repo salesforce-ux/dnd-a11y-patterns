@@ -8,17 +8,8 @@ import TableHeaderCell from '../components/Table/TableHeaderCell';
 import TableRow from '../components/Table/TableRow';
 import TableCell from '../components/Table/TableCell';
 
-class ResizeOneDimensionView extends Component {
-  renderDocumentation() {
-    return (
-      <div className="slds-p-bottom_medium">
-        <h2 className="slds-text-heading_medium slds-p-vertical_medium">Resize in one dimension</h2>
-        <p>Resize the Name column by dragging or using arrow keys.</p>
-      </div>
-    )
-  }
-
-  renderExample() {
+export class ResizeOneDimensionExample extends Component {
+  render() {
     return (
       <Table>
         <thead>
@@ -46,17 +37,28 @@ class ResizeOneDimensionView extends Component {
           </TableRow>
         </tbody>
       </Table>
-    )
+    );
+  }
+}
+
+export class ResizeOneDimensionView extends Component {
+  renderDocumentation() {
+    return (
+      <div className="slds-p-bottom_medium">
+        <h2 className="slds-text-heading_medium slds-p-vertical_medium">Resize in one dimension</h2>
+        <p>Resize the Name column by dragging or using arrow keys.</p>
+      </div>
+    );
   }
 
   render() {
     return (
       <article>
         {this.renderDocumentation()}
-        {this.renderExample()}
+        <ResizeOneDimensionExample/>
       </article>
-    )
+    );
   }
 }
 
-export default ResizeOneDimensionView;
+// module.exports = {ResizeOneDimensionExample, ResizeOneDimensionView}

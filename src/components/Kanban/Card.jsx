@@ -71,7 +71,7 @@ class Card extends Component {
     );
   }
 
-  render () {
+  render() {
     return (
       <li
         className="slds-item slds-p-around_medium"

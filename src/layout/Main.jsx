@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import NavLayout from './Nav';
 
 class MainLayout extends Component {
-  render () {
+  render() {
     return (
       <div className="slds-grid slds-wrap">
         <div className="slds-nav-vertical slds-p-vertical_medium slds-p-right_x-large">

@@ -7,11 +7,12 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import MainLayout from './layout/Main';
 
 import AllViews from './views/AllViews';
-import DragOnCanvasView from './views/DragOnCanvas';
-import MoveBetweenListsView from './views/MoveBetweenLists';
-import ResizeOneDimensionView from './views/ResizeOneDimension';
-import SortingListView from './views/SortingList';
-import SortingListboxView from './views/SortingListbox';
+import DemoView from './views/Demo';
+import {DragOnCanvasView} from './views/DragOnCanvas';
+import {MoveBetweenListsView} from './views/MoveBetweenLists';
+import {ResizeOneDimensionView} from './views/ResizeOneDimension';
+import {SortingListView} from './views/SortingList';
+import {SortingListboxView} from './views/SortingListbox';
 
 import './index.css';
 
@@ -20,6 +21,7 @@ ReactDOM.render(
     <Route path="/" component={MainLayout}>
       <IndexRoute component={AllViews} />
     </Route>
+    <Route path="/demo" component={DemoView} />
     <Route path="/resize" component={MainLayout}>
       <IndexRoute component={ResizeOneDimensionView} />
     </Route>

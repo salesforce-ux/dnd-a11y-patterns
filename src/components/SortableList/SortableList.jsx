@@ -88,7 +88,7 @@ class SortableList extends Component {
     });
   }
 
-  render () {
+  render() {
     const { listItems } = this.state;
 
     return (

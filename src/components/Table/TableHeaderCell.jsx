@@ -8,7 +8,7 @@ import './TableHeaderCell.css';
 
 const proptypes = {
   label: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   resizable: PropTypes.bool,
   minWidth: PropTypes.number,
   maxWidth: PropTypes.number,

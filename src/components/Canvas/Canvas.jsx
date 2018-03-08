@@ -3,6 +3,7 @@
 
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import AriaLiveRegion from '../AriaLiveRegion/AriaLiveRegion';
 import FancyAriaLiveRegion from '../AriaLiveRegion/FancyAriaLiveRegion';
 import './Canvas.css';
 
@@ -15,13 +16,16 @@ const proptypes = {
   minHeight: PropTypes.number,
   /** @type {number} minimum width of resizable box */
   minWidth: PropTypes.number,
+  /** @type {boolean} whether or not to show fancy live region*/
+  hideFancyLiveRegion: PropTypes.bool
 };
 
 const defaultProps = {
   gridInterval: 20,
   gridSize: 20,
   minWidth: 1,
-  minHeight: 1
+  minHeight: 1,
+  hideFancyLiveRegion: false
 };
 
 class Canvas extends Component {
@@ -49,6 +53,26 @@ class Canvas extends Component {
     });
   }
 
+  renderLiveRegion() {
+    if (this.props.hideFancyLiveRegion) {
+      return (
+        <AriaLiveRegion id="dnd_canvas__live">
+          {this.state.liveText}
+        </AriaLiveRegion>
+      );
+    } else {
+      return (
+        <FancyAriaLiveRegion
+          id="dnd-canvas__live"
+          hasVisibilityToggle={true}
+          isVisible={!this.props.hideFancyLiveRegion}
+        >
+          {this.state.liveText}
+        </FancyAriaLiveRegion>
+      );
+    }
+  }
+
   render() {
     var size = this.props.gridInterval * this.props.gridSize;
     var backgroundSize = this.props.gridInterval*2+ 'px ' + this.props.gridInterval*2 + 'px';
@@ -61,13 +85,7 @@ class Canvas extends Component {
     
     return (
       <div>
-        <FancyAriaLiveRegion
-          id="dnd-canvas__live"
-          hasVisibilityToggle={true}
-          isVisible={true}
-        >
-          {this.state.liveText}
-        </FancyAriaLiveRegion>
+        {this.renderLiveRegion()}
 
         <span id="dnd-canvas__operation--move" className="slds-assistive-text">
           Press Spacebar to toggle grab

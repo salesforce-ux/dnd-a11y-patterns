@@ -5,8 +5,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import SortableList from '../components/SortableList/SortableList';
 
-class SortingListView extends Component {
-  constructor (props) {
+export class SortingListExample extends Component {
+  constructor(props) {
     super(props);
 
     this.listItems = [{
@@ -47,6 +47,16 @@ class SortingListView extends Component {
     }];
   }
 
+  render() {
+    return (
+      <div>
+        <SortableList listItems={this.listItems} />
+      </div>
+    )
+  }
+}
+
+export class SortingListView extends Component {
   renderDocumentation() {
     return (
       <div className="slds-p-bottom_medium">
@@ -68,22 +78,14 @@ class SortingListView extends Component {
           </li>
         </ul>
       </div>
-    )
+    );
   }
 
-  renderExample () {
-    return (
-      <div>
-        <SortableList listItems={this.listItems} />
-      </div>
-    )
-  }
-
-  render () {
+  render() {
     return (
       <article>
         {this.renderDocumentation()}
-        {this.renderExample()}
+        <SortingListExample/>
       </article>
     ); 
   }
@@ -93,4 +95,4 @@ SortingListView.propTypes = {
   children: PropTypes.node,
 }
 
-export default SortingListView
+// module.exports = {SortingListExample, SortingListView}

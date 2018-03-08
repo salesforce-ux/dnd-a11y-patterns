@@ -5,7 +5,25 @@ import React, {Component} from 'react';
 import Listbox from '../components/Listbox/Listbox';
 import ListboxOption from '../components/Listbox/ListboxOption';
 
-class SortingListboxView extends Component {
+export class SortingListboxExample extends Component {
+  render() {
+    return (
+      <div>
+        <h3 className="slds-text-heading_small slds-p-top_medium">Desserts</h3>
+        <Listbox ariaLabel="Desserts" hasDragDrop>
+          <ListboxOption name="Ice Cream"/>
+          <ListboxOption name="Pie"/>
+          <ListboxOption name="Cake"/>
+          <ListboxOption name="Cupcake"/>
+          <ListboxOption name="Donut"/>
+          <ListboxOption name="Sorbet"/>
+        </Listbox>
+      </div>
+    );
+  }
+}
+
+export class SortingListboxView extends Component {
   renderDocumentation() {
     return (
       <div className="slds-p-bottom_medium">
@@ -31,30 +49,14 @@ class SortingListboxView extends Component {
     )
   }
 
-  renderExample() {
-    return (
-      <div>
-        <h3 className="slds-text-heading_small slds-p-top_medium">Desserts</h3>
-        <Listbox ariaLabel="Desserts" hasDragDrop>
-          <ListboxOption name="Ice Cream"/>
-          <ListboxOption name="Pie"/>
-          <ListboxOption name="Cake"/>
-          <ListboxOption name="Cupcake"/>
-          <ListboxOption name="Donut"/>
-          <ListboxOption name="Sorbet"/>
-        </Listbox>
-      </div>
-    );
-  }
-
-  render () {
+  render() {
     return (
       <article>
         {this.renderDocumentation()}
-        {this.renderExample()}
+        <SortingListboxExample/>
       </article>
     ); 
   }
 }
 
-export default SortingListboxView;
+// module.exports = {SortingListboxExample, SortingListboxView}

@@ -2,10 +2,37 @@
 // Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license
 
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Canvas from '../components/Canvas/Canvas';
 import CanvasItem from '../components/Canvas/CanvasItem';
 
-class DragOnCanvasView extends Component {
+
+const proptypes = {
+  /** @type {boolean} whether or not to show fancy live region*/
+  hideFancyLiveRegion: PropTypes.bool
+};
+
+const defaultProps = {
+  hideFancyLiveRegion: false
+};
+
+export class DragOnCanvasExample extends Component {
+  render() {
+    return (
+      <div>
+        <Canvas hideFancyLiveRegion={this.props.hideFancyLiveRegion}>
+          <CanvasItem label="Object A" x={2} y={1} width={7} height={6} minWidth={3} minHeight={3}/>
+          <CanvasItem label="Object B" x={6} y={12} width={4} height={4} minWidth={3} minHeight={3} />
+        </Canvas>
+      </div>
+    );
+  }
+}
+
+DragOnCanvasExample.propTypes = proptypes;
+DragOnCanvasExample.defaultProps = defaultProps;
+
+export class DragOnCanvasView extends Component {
   renderDocumentation() {
     return (
       <div>
@@ -29,28 +56,17 @@ class DragOnCanvasView extends Component {
           </li>
         </ul>
       </div>
-    )
-  }
-
-  renderExample() {
-    return (
-      <div>
-        <Canvas>
-          <CanvasItem label="Object A" x={2} y={1} width={7} height={6} minWidth={3} minHeight={3}/>
-          <CanvasItem label="Object B" x={6} y={12} width={4} height={4} minWidth={3} minHeight={3} />
-        </Canvas>
-      </div>
     );
   }
 
-  render () {
+  render() {
     return (
       <article>
         {this.renderDocumentation()}
-        {this.renderExample()}
+        <DragOnCanvasExample/>
       </article>
     ); 
   }
 }
 
-export default DragOnCanvasView;
+// module.exports = {DragOnCanvasExample, DragOnCanvasView}

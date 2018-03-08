@@ -4,7 +4,28 @@
 import React, {Component} from 'react';
 import Kanban from '../components/Kanban/Kanban';
 
-class MoveBetweenListsView extends Component {
+export class MoveBetweenListsExample extends Component {
+  render() {
+    return (
+      <Kanban columns={[
+        { 
+          label: 'Desk',
+          cards: ['Phone', 'Phone Charger']
+        }, {
+          label: 'Backpack',
+          cards: ['Notebook', 'Pencil', 'Hand Sanitizer']
+        }, {
+          label: 'Pocket',
+          cards: ['Keys', 'Wallet']
+        }, {
+          label: 'Recycling Bin',
+          cards: []
+        }
+      ]} />);
+  }
+}
+
+export class MoveBetweenListsView extends Component {
   renderDocumentation() {
     return (
       <div>
@@ -24,33 +45,14 @@ class MoveBetweenListsView extends Component {
     )
   }
 
-  renderExample() {
-    return (
-      <Kanban columns={[
-        { 
-          label: 'Desk',
-          cards: ['Phone', 'Phone Charger']
-        }, {
-          label: 'Backpack',
-          cards: ['Notebook', 'Pencil', 'Hand Sanitizer']
-        }, {
-          label: 'Pocket',
-          cards: ['Keys', 'Wallet']
-        }, {
-          label: 'Recycling Bin',
-          cards: []
-        }
-      ]} />);
-  }
-
-  render () {
+  render() {
     return (
       <article>
         {this.renderDocumentation()}
-        {this.renderExample()}
+        <MoveBetweenListsExample/>
       </article>
     ); 
   }
 }
 
-export default MoveBetweenListsView;
+// module.exports = { MoveBetweenListsExample, MoveBetweenListsView}
