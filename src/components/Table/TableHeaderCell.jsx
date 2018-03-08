@@ -8,7 +8,6 @@ import './TableHeaderCell.css';
 
 const proptypes = {
   label: PropTypes.string.isRequired,
-  id: PropTypes.string,
   resizable: PropTypes.bool,
   minWidth: PropTypes.number,
   maxWidth: PropTypes.number,
@@ -48,20 +47,15 @@ class TableHeaderCell extends Component {
       var id = "cell-resize-handle-" + this.props.id;
       return ((
         <div className="slds-resizable">
-
-          <label htmlFor={id} className="slds-assistive-text">
-            Width of {this.props.label} Column
-          </label>
-
           <input
+            aria-label={"Width of " + this.props.label + " Column"}
             type="range"
             min={this.props.minWidth}
             max={this.props.maxWidth}
             step={this.props.stepSize}
             value={this.state.width}
             onChange={this.handleResize}
-            className="slds-resizable__input slds-assistive-text"
-            id={id} />
+            className="slds-resizable__input slds-assistive-text" />
 
           <Draggable
             axis="x"

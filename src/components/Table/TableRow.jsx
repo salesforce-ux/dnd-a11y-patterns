@@ -16,9 +16,9 @@ class TableRow extends Component {
   renderCells() {
     return React.Children.map(this.props.children, (child, i) => {
       if (i === 0 && this.props.firstCellIsHeader) {
-        return React.cloneElement(child, {id: i.toString(), scope: 'row'})
+        return React.cloneElement(child, {scope: 'row'})
       }
-      return React.cloneElement(child, { id: i.toString()});
+      return React.cloneElement(child);
     });
   }
 
