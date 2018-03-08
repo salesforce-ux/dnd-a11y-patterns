@@ -114,6 +114,8 @@ class Listbox extends Component {
         startIndex = this.state.selectedOptions[0];
         var newOption = this.findNewOption(currentOption, moveNext);
         this.handleDragStateChange(startIndex, newOption);
+        ariaLiveText = '';
+        this.setState({ariaLiveText});
       } else {
         this.handleSingleSelectKeyDown(event);
       }
