@@ -32,9 +32,9 @@ class DemoView extends Component {
               <option value="">--- Select a pattern ---</option>
               <option value="canvas">Interact with a canvas</option>
               <option value="resize">Resize in one dimension</option>
-              <option value="list">Move between lists</option>
-              <option value="listbox">Sort a list</option>
-              <option value="lists">Sort a listbox</option>
+              <option value="lists">Move between lists</option>
+              <option value="listbox">Sort a listbox</option>
+              <option value="list">Sort a list</option>
             </select>
           </div>
         </div>
