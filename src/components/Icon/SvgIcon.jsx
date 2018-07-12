@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import utilityIconSprite from '../../icons/salesforce-lightning-design-system-icons/utility-sprite/svg/symbols.svg';
+import utilityIconSprite from '../../icons/salesforce-lightning-design-system-utility-icons.svg';
 import customIconSprite from '../../icons/custom-icons.svg';
 
 const proptypes = {

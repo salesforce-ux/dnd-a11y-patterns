@@ -335,7 +335,7 @@ class CanvasItem extends Component {
               assistiveText={"Resize " + this.props.label}
               ariaDescribedby={this.props.resizeAriaDescribedby}
               className="dnd-canvas__object-button dnd-canvas__object-button--resize"
-              sprite="utility"
+              sprite="custom"
               symbol="corner_drag"
               onClick={this.handleResizeClick}
               onKeyDown={this.handleResizeKeyDown} />
