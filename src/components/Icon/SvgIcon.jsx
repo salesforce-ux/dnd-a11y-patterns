@@ -4,6 +4,8 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import utilityIconSprite from '../../icons/salesforce-lightning-design-system-icons/utility-sprite/svg/symbols.svg';
+import customIconSprite from '../../icons/custom-icons.svg';
 
 const proptypes = {
   color: PropTypes.string,
@@ -14,16 +16,6 @@ const proptypes = {
 };
 
 class SvgIcon extends Component {
-
-  constructor(props) {
-    super(props);
-    this.getUse = this.getUse.bind(this);
-  }
-
-  getUse() {
-    const href = `#${this.props.symbol}`;
-    return `<use xlink:href="${href}"></use>`;
-  }
 
   render() {
     let colorCssClass = '';
@@ -47,13 +39,21 @@ class SvgIcon extends Component {
       colorCssClass
     );
 
+    const path = this.props.sprite === 'utility' ? utilityIconSprite : customIconSprite;
+    const href = `${path}#${this.props.symbol}`;
+
     return (
       <svg
         aria-hidden={true}
-        className={svgClass}
-        dangerouslySetInnerHTML={{__html: this.getUse()}} />
+        className={svgClass}>
+        <use xlinkHref={href}></use>
+      </svg>
     );
   }
+}
+
+class MoveIcon extends SvgIcon {
+
 }
 
 SvgIcon.propTypes = proptypes;
