@@ -16,6 +16,9 @@
     "react-router": "^2.7.0",
     "react-scripts": "1.0.13"
   },
+  "devDependencies": {
+    "mime": "1.4.1"
+  },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
